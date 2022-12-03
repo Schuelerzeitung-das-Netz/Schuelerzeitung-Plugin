@@ -13,6 +13,39 @@
  * @subpackage Schuelerzeitung/includes
  */
 
+
+function authors_list($atts) {
+
+
+	$Content = "<h1>Autoren</h1>";
+									 
+				$tags = get_tags(array(
+			  'hide_empty' => true,
+			'orderby' => 'count',
+			'order' => 'DESC'
+			));
+			
+				
+		foreach ($tags as $tag) {
+			
+			$tag_link = get_tag_link( $tag->term_id );
+			
+			$Content .= nl2br("<article class=\"d-md-flex mg-posts-sec-post\">" .  "<span style=\"display:block;margin-left: 12px;\" class=\"autorenlist\"><a class=\"entry-title title\" href=\"" . $tag_link ."\">" . $tag->name . "</a>");
+			?>
+			
+			
+			
+			<?php
+		  $Content .= ("<div style=\"position: absolute;right: 50px;display: inline-block;\">Beiträge: ".$tag->count."</div> " . tag_description($tag)  ." ". " ");
+		  
+		  
+		  $Content .= ("</span>"." </article>");
+			
+		}
+	 
+	return $Content;
+}
+
 /**
  * The core plugin class.
  *
@@ -182,7 +215,13 @@ class Schuelerzeitung {
 	 */
 	public function run() {
 		$this->loader->run();
+
+		add_shortcode('schuelerzeitung_author', 'authors_list');
+
 	}
+
+
+	
 
 	/**
 	 * The name of the plugin used to uniquely identify it within the context of
