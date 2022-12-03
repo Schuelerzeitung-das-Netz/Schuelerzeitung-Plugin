@@ -15,7 +15,7 @@
  * Plugin Name:       Schuelerzeitung
  * Plugin URI:        https://github.com/Schuelerzeitung-das-Netz/Schuelerzeitung-Plugin
  * Description:       This plugin extends the theme to support the autor list
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Schuelerzeitung
  * GitHub Plugin URI: Schuelerzeitung-das-Netz/Schuelerzeitung-Plugin
  * Primary Branch: main
@@ -79,3 +79,39 @@ function run_schuelerzeitung() {
 
 }
 run_schuelerzeitung();
+
+
+function authors_list($atts) {
+
+
+	$Content = "<h1>Autoren</h1>";
+									 
+				$tags = get_tags(array(
+			  'hide_empty' => true,
+			'orderby' => 'count',
+			'order' => 'DESC'
+			));
+			
+				
+		foreach ($tags as $tag) {
+			
+			$tag_link = get_tag_link( $tag->term_id );
+			
+			$Content .= nl2br("<article class=\"d-md-flex mg-posts-sec-post\">" .  "<span style=\"display:block;margin-left: 12px;\" class=\"autorenlist\"><a class=\"entry-title title\" href=\"" . $tag_link ."\">" . $tag->name . "</a>");
+			?>
+			
+			
+			
+			<?php
+		  $Content .= ("<div style=\"position: absolute;right: 50px;display: inline-block;\">Beiträge: ".$tag->count."</div> " . tag_description($tag)  ." ". " ");
+		  
+		  
+		  $Content .= ("</span>"." </article>");
+			
+		}
+	 
+	return $Content;
+}
+
+add_shortcode('schuelerzeitung_author', 'authors_list');
+
