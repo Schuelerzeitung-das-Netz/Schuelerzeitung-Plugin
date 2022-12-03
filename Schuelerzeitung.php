@@ -9,16 +9,15 @@
  * that starts the plugin.
  *
  * @link              https://github.com/Schuelerzeitung-das-Netz/Schuelerzeitung-Plugin
- * @since             1.0.0
+ * @since             1.0.1
  * @package           Schuelerzeitung
  *
  * @wordpress-plugin
  * Plugin Name:       Schuelerzeitung
  * Plugin URI:        https://github.com/Schuelerzeitung-das-Netz/Schuelerzeitung-Plugin
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
- * Author:            Your Name or Your Company
- * Author URI:        http://example.com/
+ * Description:       This plugin extends the theme to support the autor list
+ * Version:           1.0.1
+ * Author:            Schuelerzeitung
  * GitHub Plugin URI: https://github.com/Schuelerzeitung-das-Netz/Schuelerzeitung-Plugin
  * Primary Branch: main
  * License:           GPL-2.0+
