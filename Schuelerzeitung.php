@@ -16,9 +16,9 @@
  * Plugin Name:       Schuelerzeitung
  * Plugin URI:        https://github.com/Schuelerzeitung-das-Netz/Schuelerzeitung-Plugin
  * Description:       This plugin extends the theme to support the autor list
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Schuelerzeitung
- * GitHub Plugin URI: https://github.com/Schuelerzeitung-das-Netz/Schuelerzeitung-Plugin
+ * GitHub Plugin URI: Schuelerzeitung-das-Netz/Schuelerzeitung-Plugin
  * Primary Branch: main
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
